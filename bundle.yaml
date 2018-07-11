@@ -1,0 +1,15 @@
+api_version: 0.0.2
+name: fafa-bundle
+edit:
+  image: eu.gcr.io/contiamo.com/contiamo/datascience-internal-all
+
+provider:
+  name: faas
+  gateway: http://localhost:8080
+  network: fafa_bundle
+
+functions:
+  test:
+    lang: dockerfile
+    handler: ./functions/test
+    image: fafa_bundle_test:latest
