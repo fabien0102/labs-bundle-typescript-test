@@ -1,7 +1,7 @@
 api_version: 0.0.2
 name: fafa-bundle
 edit:
-  image: eu.gcr.io/contiamo.com/contiamo/datascience-internal-all
+  image: fabien0102/jupyterjs:latest
 
 provider:
   name: faas
@@ -10,6 +10,5 @@ provider:
 
 functions:
   test:
-    lang: dockerfile
     handler: ./functions/test
     image: fafa_bundle_test:latest
