@@ -7,3 +7,6 @@ functions:
   test:
     lang: dockerfile
     function: /functions/test
+  graphql-js:
+    lang: dockerfile
+    function: /funtions/graphql-js
