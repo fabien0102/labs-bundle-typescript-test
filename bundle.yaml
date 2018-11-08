@@ -1,7 +1,7 @@
 api_version: 0.0.2
 name: fafa-bundle
 edit:
-  image: eu.gcr.io/staging-205711/datascience-internal-all:latest
+  image: contiamo/datascience-lab:latest
 
 functions:
   graphql-js:
