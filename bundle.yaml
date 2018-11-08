@@ -4,9 +4,6 @@ edit:
   image: eu.gcr.io/staging-205711/datascience-internal-all:latest
 
 functions:
-  test:
-    lang: dockerfile
-    function: /functions/test
   graphql-js:
     lang: dockerfile
     function: /funtions/graphql-js
