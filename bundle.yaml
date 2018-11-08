@@ -1,14 +1,9 @@
 api_version: 0.0.2
 name: fafa-bundle
 edit:
-  image: fabien0102/jupyterjs:latest
-
-provider:
-  name: faas
-  gateway: http://localhost:8080
-  network: fafa_bundle
+  image: eu.gcr.io/staging-205711/datascience-internal-all:latest
 
 functions:
   test:
-    handler: ./functions/test
-    image: fafa_bundle_test:latest
+    lang: dockerfile
+    function: /functions/test
