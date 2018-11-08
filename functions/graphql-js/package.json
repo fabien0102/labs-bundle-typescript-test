@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "get-stdin": "^6.0.0",
     "graphql": "^14.0.2"
   }
 }
