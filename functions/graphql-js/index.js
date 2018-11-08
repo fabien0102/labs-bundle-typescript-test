@@ -1,5 +1,6 @@
 "use strict";
 const { graphql, buildSchema } = require("graphql");
+const getStdin = require("get-stdin");
 
 // schema
 const schema = buildSchema(`
@@ -11,14 +12,7 @@ const schema = buildSchema(`
 // resolver
 const root = { hello: () => "Hello world! from OpenFaaS" };
 
-module.exports = (context, callback) => {
-  // here we call the graphql engine, the query is expected to come in
-  // the context parameter
-  graphql(schema, context, root)
-    .then(response => {
-      callback(undefined, response);
-    })
-    .catch(err => {
-      callback(err, undefined);
-    });
-};
+// handler
+getStdin()
+    .then(req => graphql(schema, req, root))
+    .catch(console.error.bind(console))
