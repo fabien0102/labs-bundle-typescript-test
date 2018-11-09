@@ -11,14 +11,15 @@ const schema = buildSchema(`
 // resolver
 const root = { hello: () => "Hello world! from OpenFaaS" };
 
-module.exports = (context, callback) => {
-  // here we call the graphql engine, the query is expected to come in
-  // the context parameter
-  graphql(schema, context, root)
-    .then(response => {
-      callback(undefined, response);
-    })
-    .catch(err => {
-      callback(err, undefined);
-    });
-};
+
+// handler
+process.stdin.setEncoding("utf8")
+process.stdin.on("readable", () => {
+    const req = process.stdin.read();
+    
+    if (req !== null) {
+      graphql(schema, req, root)
+        .then(res => console.log(res))
+        .catch(err => console.log(err.message))   
+    }
+})

@@ -1,6 +1,5 @@
 "use strict";
 const { graphql, buildSchema } = require("graphql");
-const getStdin = require("get-stdin");
 
 // schema
 const schema = buildSchema(`
@@ -12,7 +11,12 @@ const schema = buildSchema(`
 // resolver
 const root = { hello: () => "Hello world! from OpenFaaS" };
 
+
 // handler
-getStdin()
-    .then(req => graphql(schema, req, root))
-    .catch(console.error.bind(console))
+process.stdin.setEncoding("utf8")
+process.stdin.on("readable", () => {
+    const req = process.stdin.read();
+    graphql(schema, req, root)
+        .then(process.stdout.write)
+        .catch(process.stout.write)
+})
