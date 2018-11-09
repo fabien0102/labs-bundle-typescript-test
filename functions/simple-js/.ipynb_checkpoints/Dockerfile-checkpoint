@@ -26,7 +26,6 @@ RUN npm i --production
 # Copy outer function handler
 COPY index.js ./
 
-
 WORKDIR /home/app/
 
 # chmod for tmp is for a buildkit issue (@alexellis)
