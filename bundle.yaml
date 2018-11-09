@@ -7,3 +7,6 @@ functions:
   graphql-js:
     lang: dockerfile
     function: /funtions/graphql-js
+  js-hello:
+    lang: dockerfile
+    handler: /functions/simple-js
