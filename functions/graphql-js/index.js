@@ -1,20 +1,20 @@
 "use strict";
-const { graphql, buildSchema } = require("graphql");
+const { graphql } = require("graphql");
+const { makeExecutableSchema } = require("graphql-tools")
 
-// schema
-const schema = buildSchema(`
-  type Query {
-    hello: String
-    helloYou(name: String!): String
-  }
-`);
-
-// resolver
-const root = { 
-    hello: () => "Hello world! from OpenFaaS",
-    helloYou: ({name}) => `Hello ${name}`
-};
-
+var typeDefs = `
+type Query {
+  hello: String!
+  helloYou(name: String!): String!
+}
+`
+var resolvers = {
+    Query: {
+      hello: () => "hello world",
+      helloYou: (obj,{name}) => `Hello ${name}!`
+    }
+}
+var executableSchema = makeExecutableSchema({typeDefs, resolvers})
 
 // handler
 process.stdin.setEncoding("utf8")
@@ -22,7 +22,7 @@ process.stdin.on("readable", () => {
     const req = process.stdin.read();
     
     if (req !== null) {
-      graphql(schema, req, root)
+      graphql(executableSchema, req)
         .then(res => console.log(res))
         .catch(err => console.log(err.message))   
     }
