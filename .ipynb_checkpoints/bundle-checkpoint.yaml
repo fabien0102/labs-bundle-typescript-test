@@ -1,0 +1,9 @@
+api_version: 0.0.2
+name: fafa-bundle
+edit:
+  image: contiamo/datascience-lab:latest
+
+functions:
+  graphql-js:
+    lang: dockerfile
+    function: /funtions/graphql-js
