@@ -22,8 +22,12 @@ process.stdin.on("readable", () => {
     const req = process.stdin.read();
     
     if (req !== null) {
-      graphql(executableSchema, req)
-        .then(res => console.log(res))
-        .catch(err => console.log(err.message))   
+        try {
+            req = JSON.parse(req).query
+        } catch (e) {/* req is already a query */}
+        
+        graphql(executableSchema, req)
+            .then(res => console.log(res))
+            .catch(err => console.log(err.message))   
     }
 })
