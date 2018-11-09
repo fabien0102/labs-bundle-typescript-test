@@ -5,11 +5,15 @@ const { graphql, buildSchema } = require("graphql");
 const schema = buildSchema(`
   type Query {
     hello: String
+    helloYou: (name: String!) => String
   }
 `);
 
 // resolver
-const root = { hello: () => "Hello world! from OpenFaaS" };
+const root = { 
+    hello: () => "Hello world! from OpenFaaS",
+    helloYou: name => `Hello ${name}`
+};
 
 
 // handler
