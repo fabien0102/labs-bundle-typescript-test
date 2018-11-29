@@ -25,6 +25,7 @@ RUN npm i --production
 
 # Copy outer function handler
 COPY index.js ./
+COPY utils ./
 
 
 WORKDIR /home/app/

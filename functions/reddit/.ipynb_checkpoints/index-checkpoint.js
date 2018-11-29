@@ -1,10 +1,10 @@
 const { default: fetch } = require("node-fetch");
 const http = require("http");
 const {join} = require("path");
-const getQueryParams = require(join(__dirname, "utils/getQueryParams.js"));
+const getQueryParams = require("./utils/getQueryParams");
 
 let invoked = 0;
-let mock = require(join(__dirname, "utils/mock.js"));
+let mock = require("./utils/mock");
 
 http
   .createServer(async (req, res) => {
