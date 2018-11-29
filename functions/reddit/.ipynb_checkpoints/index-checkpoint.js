@@ -16,6 +16,10 @@ const {
     renderToString
 } = require("react-dom/server");
 
+module.exports = (req, res) => {
+    console.log(req);
+    console.log(res);
+}
 
 //     if (queryParams.fetch) {
 //       const rawMock = await fetch("https://reddit.com/r/" + queryParams.fetch + ".json");
