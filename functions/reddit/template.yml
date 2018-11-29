@@ -1,4 +1,4 @@
-language: node
+language: node8-express
 fprocess: node index.js
 welcome_message: |
   You have created a new function which uses Node.js 8.9.1.

@@ -21,6 +21,11 @@ module.exports = (req, res) => {
     console.log(res);
 }
 
+
+
+
+
+
 //     if (queryParams.fetch) {
 //       const rawMock = await fetch("https://reddit.com/r/" + queryParams.fetch + ".json");
 //       mock = await rawMock.json();
