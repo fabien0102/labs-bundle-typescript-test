@@ -2,13 +2,13 @@ const { default: fetch } = require("node-fetch");
 const http = require("http");
 const {join} = require("path");
 
-console.log("Good luck!")
+// console.log("Good luck!")
 const getQueryParams = require("./utils/getQueryParams");
 
 let invoked = 0;
 let mock = require("./utils/mock");
 
-module.exports = async (req, res) => {
+// module.exports = async (req, res) => {
     console.time("Import React" + invoked);
     const React = require("react");
     const { renderToString } = require("react-dom/server");
@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
     }
 
     res.writeHead(200, { "content-type": "text/html" });
-    res.end(
+    console.log(
       '<link rel="stylesheet" href="/style.css">' +
         '<meta charset="utf-8">' +
         renderToString(
@@ -169,4 +169,4 @@ module.exports = async (req, res) => {
         ),
     );
     invoked++;
-  }
+//   }
