@@ -24,7 +24,7 @@ COPY package.json ./
 RUN npm i --production
 
 # Copy outer function handler
-COPY index.js ./
+COPY handler.js ./
 ADD utils ./utils
 
 
