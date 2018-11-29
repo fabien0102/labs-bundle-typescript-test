@@ -37,7 +37,7 @@ RUN chown app:app -R /home/app \
 USER app
 
 ENV cgi_headers="true"
-ENV fprocess="node index.js"
+ENV fprocess="node handler.js"
 ENV mode="http"
 
 HEALTHCHECK --interval=1s CMD [ -e /tmp/.lock ] || exit 1
