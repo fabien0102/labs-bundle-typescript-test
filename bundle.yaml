@@ -10,3 +10,6 @@ functions:
   simple-js:
     lang: dockerfile
     handler: /functions/simple-js
+  reddit:
+    lang: dockerfile
+    handler: /functions/reddit
