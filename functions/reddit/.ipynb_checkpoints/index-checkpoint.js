@@ -1,6 +1,8 @@
 const { default: fetch } = require("node-fetch");
 const http = require("http");
 const {join} = require("path");
+
+console.log("Good luck!")
 const getQueryParams = require("./utils/getQueryParams");
 
 let invoked = 0;
