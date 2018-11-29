@@ -9,7 +9,6 @@ let invoked = 0;
 let mock = require("./utils/mock");
 
 (async (req, res) => {
-    console.time("Import React" + invoked);
     const React = require("react");
     const { renderToString } = require("react-dom/server");
     console.timeEnd("Import React" + invoked);
@@ -123,7 +122,7 @@ let mock = require("./utils/mock");
                 "div",
                 { className: "feed" },
                 mock.data.children.map(function(_ref) {
-                  var data = _ref.data;
+                  var data = _ref.data || {};
                   return React.createElement(
                     "a",
                     { className: "feed__feed-link feed-link", href: data.url, target: "_blank" },
