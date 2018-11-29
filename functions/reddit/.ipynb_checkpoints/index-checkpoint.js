@@ -8,7 +8,7 @@ const getQueryParams = require("./utils/getQueryParams");
 let invoked = 0;
 let mock = require("./utils/mock");
 
-// module.exports = async (req, res) => {
+(async (req, res) => {
     console.time("Import React" + invoked);
     const React = require("react");
     const { renderToString } = require("react-dom/server");
@@ -167,6 +167,6 @@ let mock = require("./utils/mock");
             ),
           ),
         ),
-    );
+    )})();
     invoked++;
 //   }
