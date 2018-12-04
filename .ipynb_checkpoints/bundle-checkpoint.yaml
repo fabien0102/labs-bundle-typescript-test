@@ -6,10 +6,11 @@ edit:
 functions:
   graphql-js:
     lang: dockerfile
-    function: /funtions/graphql-js
+    function: /functions/graphql-js
   simple-js:
     lang: dockerfile
     handler: /functions/simple-js
   reddit:
     lang: dockerfile
     handler: /functions/reddit
+
