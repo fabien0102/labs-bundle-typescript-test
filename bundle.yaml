@@ -4,9 +4,9 @@ edit:
   image: contiamo/datascience-lab:latest
 
 functions:
-  graphql-js:
-    lang: dockerfile
-    function: /functions/graphql-js
+#  graphql-js:
+#    lang: dockerfile
+#    function: /functions/graphql-js
   simple-js:
     lang: dockerfile
     handler: /functions/simple-js
