@@ -11,8 +11,8 @@ functions:
     lang: dockerfile
     handler: /functions/simple-js
   reddit:
-    image: "node:8.9.1-alpine"
-    command: "node functions/reddit/handler.js"
+    image: node:8.9.1-alpine
+    command: node functions/reddit/handler.js
     build:
-      dockerfile: functions/reddit/Dockerfile
+      dockerfile: /functions/reddit/Dockerfile
 
