@@ -10,7 +10,7 @@ functions:
   simple-js:
     lang: dockerfile
     handler: /functions/simple-js
-  reddit:
+  rabbit:
     image: node:8.9.1-alpine
     command: node functions/reddit/handler.js
     build:
