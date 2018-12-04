@@ -6,7 +6,7 @@ RUN addgroup -S app && adduser app -S -G app
 RUN apk --no-cache add curl \
   && echo "Pulling watchdog binary from Github." \
   && curl -sSL https://github.com/openfaas-incubator/of-watchdog/releases/download/0.4.5/of-watchdog > /usr/bin/fwatchdog \
-  && chmod +x /usr/bin/fwatchdog \
+  && chmod +x /usr/bin/of-watchdog \
   && apk del curl --no-cache
 
 WORKDIR /root/
